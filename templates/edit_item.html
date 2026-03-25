@@ -1,0 +1,12 @@
+<h2>Edit Item</h2>
+
+<form method="POST">
+    <input type="text" name="name" value="{{ item[1] }}" required><br>
+    <input type="text" name="category" value="{{ item[2] }}"><br>
+    <input type="number" name="quantity" value="{{ item[3] }}"><br>
+    <input type="number" name="min_quantity" value="{{ item[4] }}"><br>
+    <input type="text" name="unit" value="{{ item[5] }}"><br>
+    <input type="text" name="supplier" value="{{ item[6] }}"><br>
+    <input type="text" name="location" value="{{ item[7] }}"><br>
+    <button type="submit">Update</button>
+</form>
