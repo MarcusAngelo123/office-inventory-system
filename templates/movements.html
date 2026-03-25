@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Stock Movements</h2>
+
+<h3>Record New Movement</h3>
+<form method="POST">
+    <label>Item:</label><br>
+    <select name="item_id" required>
+        {% for item in items %}
+        <option value="{{ item[0] }}">{{ item[1] }} (Current: {{ item[3] }})</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label>Movement Type:</label><br>
+    <select name="movement_type">
+        <option value="IN">IN</option>
+        <option value="OUT">OUT</option>
+    </select><br><br>
+
+    <label>Quantity:</label><br>
+    <input type="number" name="quantity" min="1" required><br><br>
+
+    <label>User:</label><br>
+    <input type="text" name="user" required><br><br>
+
+    <label>Notes:</label><br>
+    <input type="text" name="notes"><br><br>
+
+    <button type="submit">Record Movement</button>
+</form>
+
+<hr>
+<h3>Recent Movements</h3>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th><th>Item</th><th>Type</th><th>Quantity</th><th>User</th><th>Date</th><th>Notes</th>
+    </tr>
+    {% for mv in movements_list %}
+    <tr>
+        <td>{{ mv[0] }}</td>
+        <td>{{ mv[1] }}</td>
+        <td>{{ mv[2] }}</td>
+        <td>{{ mv[3] }}</td>
+        <td>{{ mv[4] }}</td>
+        <td>{{ mv[5] }}</td>
+        <td>{{ mv[6] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

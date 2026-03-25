@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<p>Total Items: {{ total_items }}</p>
+<p>Low Stock Items: {{ low_stock }}</p>
+
+<h3>Recent Movements</h3>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th><th>Item</th><th>Type</th><th>Quantity</th><th>User</th><th>Date</th><th>Notes</th>
+    </tr>
+    {% for mv in recent_movements %}
+    <tr>
+        <td>{{ mv[0] }}</td>
+        <td>{{ mv[1] }}</td>
+        <td>{{ mv[2] }}</td>
+        <td>{{ mv[3] }}</td>
+        <td>{{ mv[4] }}</td>
+        <td>{{ mv[5] }}</td>
+        <td>{{ mv[6] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

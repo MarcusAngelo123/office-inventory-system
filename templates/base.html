@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Office Inventory System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a> |
+        <a href="{{ url_for('inventory') }}">Inventory</a> |
+        <a href="{{ url_for('movements') }}">Stock Movements</a> |
+        <a href="{{ url_for('add_item') }}">Add Item</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
